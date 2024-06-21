@@ -1,0 +1,17 @@
+:host {
+    .prosemirror-container {
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+
+        .toolbar {
+            padding: 10px;
+            flex: 0 0 auto;
+        }
+
+        .edit-container {
+            flex: 1;
+            overflow: hidden;
+        }
+    }
+}

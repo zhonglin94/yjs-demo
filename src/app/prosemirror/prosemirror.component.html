@@ -1,6 +1,8 @@
-<div class="toolbar">
+<div class="prosemirror-container">
+    <div class="toolbar">
         <ng-container *ngFor="let user of yjsService.users">
             <div>{{user.name}}</div>
         </ng-container>
+    </div>
+    <div class="edit-container" #editorContainer></div>
 </div>
-<div #editorContainer></div>
