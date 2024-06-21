@@ -1,0 +1,28 @@
+:host {
+    display: block;
+    height: 100vh;
+    padding: 0 32px 0 32px;
+
+    .landing-toolbar {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 5px;
+    }
+
+    .landing-adv {
+        margin-top: 50px;
+
+        h1 {
+            font-weight: 600;
+            font-size: clamp(36px, 9.23vw, 48px);
+            line-height: 1;
+            letter-spacing: -.015em;
+            font-size: 58px;
+            text-align: center;
+        }
+    }
+
+    .landing-user-input {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="user-input-container">
+    <mat-form-field appearance="outline">
+        <mat-label>Your name</mat-label>
+        <input matInput placeholder="Your name" [(ngModel)]="userName">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onEnter()" [disabled]="!userName">Enter</button>
+</div>
+
