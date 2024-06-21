@@ -1,6 +1,5 @@
-import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
-import * as Y from 'yjs';
-import { WebsocketProvider } from 'y-websocket';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { YjsService } from '../yjs.service';
 import { ySyncPlugin, yCursorPlugin, yUndoPlugin, undo, redo } from 'y-prosemirror';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
@@ -10,28 +9,24 @@ import { exampleSetup } from 'prosemirror-example-setup';
 import { keymap } from 'prosemirror-keymap';
 
 @Component({
-	selector: 'app-prosemirror-demo',
-	templateUrl: './prosemirror-demo.component.html',
-	styleUrls: ['./prosemirror-demo.component.scss']
+	selector: 'app-prosemirror',
+	templateUrl: './prosemirror.component.html',
+	styleUrls: ['./prosemirror.component.scss']
 })
-export class ProsemirrorDemoComponent implements AfterViewInit {
+export class ProsemirrorComponent implements OnInit {
 	@ViewChild('editorContainer', { static: true }) containerEl!: ElementRef<HTMLDivElement>;
-	private prosemirrorView: any;
+	private prosemirrorView: EditorView | undefined;
 
-	constructor() {
+	constructor(public yjsService: YjsService) {
 	}
 
-	ngAfterViewInit(): void {
+	ngOnInit(): void {
 		this.init();
 	}
 
 	private init(): void {
-		const ydoc = new Y.Doc();
-		const provider = new WebsocketProvider(
-			'wss://demos.yjs.dev/ws',
-			'bgc-innovation-carnival',
-			ydoc
-		);
+		const { provider } = this.yjsService;
+		const ydoc = provider!.doc;
 		const yXmlFragment = ydoc.getXmlFragment('prosemirror');
 
 		const editor = document.createElement('div');
@@ -43,7 +38,7 @@ export class ProsemirrorDemoComponent implements AfterViewInit {
 				schema,
 				plugins: [
 					ySyncPlugin(yXmlFragment),
-					yCursorPlugin(provider.awareness),
+					yCursorPlugin(provider!.awareness),
 					yUndoPlugin(),
 					keymap({
 						'Mod-z': undo,

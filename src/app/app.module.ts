@@ -8,27 +8,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProsemirrorDemoComponent } from './prosemirror-demo/prosemirror-demo.component';
 import { UserNameInputComponent } from './user-name-input/user-name-input.component';
 import { LandingComponent } from './landing/landing.component';
+import { ProsemirrorComponent } from './prosemirror/prosemirror.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProsemirrorDemoComponent,
-    UserNameInputComponent,
-    LandingComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSlideToggleModule,
-    MatInputModule,
-    FormsModule,
-    MatButtonModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		UserNameInputComponent,
+		LandingComponent,
+		ProsemirrorComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		MatSlideToggleModule,
+		MatInputModule,
+		FormsModule,
+		MatButtonModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
