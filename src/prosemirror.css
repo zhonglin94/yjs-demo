@@ -153,12 +153,7 @@ li.ProseMirror-selectednode:after {
 }
 
 .ProseMirror-menu-active {
-    background: #eee;
-    border-radius: 4px;
-}
-
-.ProseMirror-menu-active {
-    background: #eee;
+    background: black;
     border-radius: 4px;
 }
 
@@ -201,7 +196,7 @@ li.ProseMirror-selectednode:after {
     display: inline-block;
     line-height: .8;
     vertical-align: -2px; /* Compensate for padding */
-    padding: 2px 8px;
+    padding: 4px 8px;
     cursor: pointer;
 }
 
