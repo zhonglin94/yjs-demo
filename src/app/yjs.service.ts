@@ -3,19 +3,17 @@ import { WebsocketProvider } from 'y-websocket';
 import * as Y from 'yjs';
 
 export const usercolors = [
-	'#30bced',
-	'#6eeb83',
-	'#ffbc42',
-	'#ecd444',
-	'#ee6352',
-	'#9ac2c9',
-	'#8acb88',
-	'#1be7ff'
+	'#1f78b4',  //蓝色
+	'#33a02c',  //绿色
+	'#e31a1c',  //红色
+	'#ff7f00',  //橙色
+	'#6a3d9a',  //紫色
+	'#b15928',  //棕色
+	'#a6cee3',  //浅蓝色
+	'#b2df8a',  //浅绿色
+	'#fb9a99',  //浅红色
+	'#fdbf6f'  //浅橙色
 ];
-
-function creatUsers() {
-	return { name: 'Zhonglin YAANG dDDDD', color: YjsService.getColor() };
-}
 
 interface User {
 	name: string;

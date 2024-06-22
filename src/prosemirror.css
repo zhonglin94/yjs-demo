@@ -336,7 +336,6 @@ li.ProseMirror-selectednode:after {
     background: black;
     color: white;
     background-clip: padding-box;
-    padding: 5px 0;
     margin-bottom: 23px;
     height: 100%;
 }
@@ -388,4 +387,5 @@ li.ProseMirror-selectednode:after {
     padding-right: 2px;
     border-radius: 3px;
     text-transform: capitalize;
+    color: black;
 }
