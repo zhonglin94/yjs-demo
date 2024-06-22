@@ -88,39 +88,6 @@ export const nodes = {
     group: 'inline'
   },
 
-  // :: NodeSpec An inline image (`<img>`) node. Supports `src`,
-  // `alt`, and `href` attributes. The latter two default to the empty
-  // string.
-  image: {
-    inline: true,
-    attrs: {
-      ychange: { default: null },
-      src: {},
-      alt: { default: null },
-      title: { default: null }
-    },
-    group: 'inline',
-    draggable: true,
-    parseDOM: [{
-      tag: 'img[src]',
-      getAttrs (dom) {
-        return {
-          src: dom.getAttribute('src'),
-          title: dom.getAttribute('title'),
-          alt: dom.getAttribute('alt')
-        }
-      }
-    }],
-    toDOM (node) {
-      const domAttrs = {
-        src: node.attrs.src,
-        title: node.attrs.title,
-        alt: node.attrs.alt
-      }
-      return ['img', calcYchangeDomAttrs(node.attrs, domAttrs)]
-    }
-  },
-
   // :: NodeSpec A hard line break, represented in the DOM as `<br>`.
   hard_break: {
     inline: true,

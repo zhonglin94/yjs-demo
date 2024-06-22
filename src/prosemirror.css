@@ -361,8 +361,31 @@ li.ProseMirror-selectednode:after {
     margin-bottom: 1em
 }
 
-.ProseMirror-yjs-cursor div {
+.ProseMirror-yjs-cursor {
+    position: absolute;
+    border-left: black;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-color: orange;
+    height: 1em;
+    word-break: normal;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.ProseMirror-yjs-cursor > div {
+    position: relative;
+    top: -38px;
+    font-size: 1rem;
+    user-select: none;
+    font-family: serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    user-select: none;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
     border-radius: 3px;
     text-transform: capitalize;
-    padding-left: 0.5rem;
 }
