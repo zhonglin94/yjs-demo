@@ -1,11 +1,11 @@
 <div class="prosemirror-container">
     <div class="toolbar">
-        <span class="logo">BGC</span>
+        <span class="logo"><span class="yjs-name">BGC Yjs</span> Powered</span>
         <div class="toolbar-end">
             <ng-container *ngFor="let user of yjsService.topFiveUsers">
                 <div class="user-avatar-container" [style.background]="user.color">
                     <div class="user-avatar">
-                        <span>{{user.name[0]}}</span>
+                        <span>{{getNameAbbreviation(user.name) | uppercase}}</span>
                     </div>
                 </div>
             </ng-container>
@@ -27,7 +27,7 @@
                         <div class="user-avatar-detail">
                             <div class="user-avatar-container" [style.background]="user.color">
                                 <div class="user-avatar">
-                                    <span>{{user.name[0]}}</span>
+                                    <span>{{getNameAbbreviation(user.name) | uppercase}}</span>
                                 </div>
                             </div>
                             <span class="user-name">{{user.name}}</span></div>

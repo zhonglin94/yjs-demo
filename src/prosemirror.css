@@ -360,3 +360,8 @@ li.ProseMirror-selectednode:after {
     margin-bottom: 1em
 }
 
+.ProseMirror-yjs-cursor div {
+    border-radius: 3px;
+    text-transform: capitalize;
+    padding-left: 0.5rem;
+}

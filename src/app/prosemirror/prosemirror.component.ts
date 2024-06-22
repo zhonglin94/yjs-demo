@@ -24,6 +24,15 @@ export class ProsemirrorComponent implements OnInit {
 		this.init();
 	}
 
+	getNameAbbreviation(name: string): string {
+		const split = name.split(' ');
+		const givenName = split[0];
+		if (split[1]) {
+			return `${givenName[0][0]}${split[1][0]}`;
+		}
+		return givenName[0][0];
+	}
+
 	private init(): void {
 		const { provider } = this.yjsService;
 		const ydoc = provider!.doc;

@@ -42,10 +42,10 @@ export class YjsService {
 		);
 		this.onUserChange();
 
-		for (let i = 0; i < 100; i++) {
-			this.users.push(creatUsers());
-		}
-		this.topFiveUsers = this.users.slice(0, 5);
+		// for (let i = 0; i < 100; i++) {
+		// 	this.users.push(creatUsers());
+		// }
+		// this.topFiveUsers = this.users.slice(0, 5);
 	}
 
 	setUser(name: string) {
@@ -58,10 +58,11 @@ export class YjsService {
 		}
 		const { awareness } = this.provider;
 		awareness.on('change', () => {
-			// this.users = [];
+			this.users = [];
 			awareness.getStates().forEach(state => {
-				// this.users.push(state['user']);
+				this.users.push(state['user']);
 			});
+			this.topFiveUsers = this.users.slice(0, 5);
 		});
 	}
 
