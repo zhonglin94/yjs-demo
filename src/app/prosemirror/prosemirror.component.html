@@ -1,8 +1,28 @@
 <div class="prosemirror-container">
     <div class="toolbar">
-        <ng-container *ngFor="let user of yjsService.users">
-            <div>{{user.name}}</div>
+        <ng-container *ngFor="let user of yjsService.topFiveUsers">
+            <div class="user-avatar-container" [style.background]="user.color">
+                <div class="user-avatar">
+                    <span>{{user.name[0]}}</span>
+                </div>
+            </div>
         </ng-container>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <div class="vertical-avatar-container">
+                <ng-container *ngFor="let user of yjsService.users">
+                    <div class="user-avatar-detail">
+                        <div class="user-avatar-container" [style.background]="user.color">
+                            <div class="user-avatar">
+                                <span>{{user.name[0]}}</span>
+                            </div>
+                        </div>
+                        <span class="user-name">{{user.name}}</span></div>
+                </ng-container>
+            </div>
+        </mat-menu>
     </div>
     <div class="edit-container" #editorContainer></div>
 </div>

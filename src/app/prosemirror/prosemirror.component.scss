@@ -7,11 +7,53 @@
         .toolbar {
             padding: 10px;
             flex: 0 0 auto;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            column-gap: 4px;
+            overflow: hidden;
+            justify-content: flex-end;
         }
 
         .edit-container {
             flex: 1;
             overflow: hidden;
         }
+    }
+}
+
+.vertical-avatar-container {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 4px;
+    padding: 0 0.5rem 0 0.5rem;
+
+    .user-avatar-detail {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        column-gap: 0.5rem;
+
+        .user-name {
+            max-width: 200px;
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+    }
+}
+
+.user-avatar-container {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+
+    .user-avatar {
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

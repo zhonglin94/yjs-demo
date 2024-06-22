@@ -191,6 +191,9 @@ li.ProseMirror-selectednode:after {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     overflow: visible;
+    height: 36px;
+    align-items: center;
+    display: flex;
 }
 
 .ProseMirror-icon {

@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -26,7 +28,9 @@ import { ProsemirrorComponent } from './prosemirror/prosemirror.component';
 		MatSlideToggleModule,
 		MatInputModule,
 		FormsModule,
-		MatButtonModule
+		MatButtonModule,
+		MatMenuModule,
+		MatIconModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

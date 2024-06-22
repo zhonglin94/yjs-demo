@@ -13,12 +13,22 @@ export const usercolors = [
 	'#1be7ff'
 ];
 
+function creatUsers() {
+	return { name: 'Zhonglin YAANG dDDDD', color: YjsService.getColor() };
+}
+
+interface User {
+	name: string;
+	color: string;
+}
+
 @Injectable({
 	providedIn: 'root'
 })
 export class YjsService {
 	provider: WebsocketProvider | undefined;
-	users: { name: string, color: string }[] = [];
+	users: User[] = [];
+	topFiveUsers: User[] = [];
 
 	constructor() {
 	}
@@ -31,6 +41,11 @@ export class YjsService {
 			ydoc
 		);
 		this.onUserChange();
+
+		for (let i = 0; i < 100; i++) {
+			this.users.push(creatUsers());
+		}
+		this.topFiveUsers = this.users.slice(0, 5);
 	}
 
 	setUser(name: string) {
@@ -43,9 +58,9 @@ export class YjsService {
 		}
 		const { awareness } = this.provider;
 		awareness.on('change', () => {
-			this.users = [];
+			// this.users = [];
 			awareness.getStates().forEach(state => {
-				this.users.push(state['user']);
+				// this.users.push(state['user']);
 			});
 		});
 	}
