@@ -1,37 +1,40 @@
 <div class="prosemirror-container">
     <div class="toolbar">
-        <ng-container *ngFor="let user of yjsService.topFiveUsers">
-            <div class="user-avatar-container" [style.background]="user.color">
-                <div class="user-avatar">
-                    <span>{{user.name[0]}}</span>
-                </div>
-            </div>
-        </ng-container>
-        <ng-container *ngIf="yjsService.users.length>5">
-            <div class="avatar-more">
-                <div class="user-avatar-container" [style.background]="'#c2185b'">
+        <span class="logo">BGC</span>
+        <div class="toolbar-end">
+            <ng-container *ngFor="let user of yjsService.topFiveUsers">
+                <div class="user-avatar-container" [style.background]="user.color">
                     <div class="user-avatar">
-                        <span>{{yjsService.users.length}}</span>
+                        <span>{{user.name[0]}}</span>
                     </div>
                 </div>
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <mat-icon>keyboard_arrow_down</mat-icon>
-                </button>
-            </div>
-        </ng-container>
-        <mat-menu #menu="matMenu">
-            <div class="vertical-avatar-container">
-                <ng-container *ngFor="let user of yjsService.users">
-                    <div class="user-avatar-detail">
-                        <div class="user-avatar-container" [style.background]="user.color">
-                            <div class="user-avatar">
-                                <span>{{user.name[0]}}</span>
-                            </div>
+            </ng-container>
+            <ng-container *ngIf="yjsService.users.length>5">
+                <div class="avatar-more">
+                    <div class="user-avatar-container" [style.background]="'#c2185b'">
+                        <div class="user-avatar">
+                            <span>{{yjsService.users.length}}</span>
                         </div>
-                        <span class="user-name">{{user.name}}</span></div>
-                </ng-container>
-            </div>
-        </mat-menu>
+                    </div>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <mat-icon>keyboard_arrow_down</mat-icon>
+                    </button>
+                </div>
+            </ng-container>
+            <mat-menu #menu="matMenu">
+                <div class="vertical-avatar-container">
+                    <ng-container *ngFor="let user of yjsService.users">
+                        <div class="user-avatar-detail">
+                            <div class="user-avatar-container" [style.background]="user.color">
+                                <div class="user-avatar">
+                                    <span>{{user.name[0]}}</span>
+                                </div>
+                            </div>
+                            <span class="user-name">{{user.name}}</span></div>
+                    </ng-container>
+                </div>
+            </mat-menu>
+        </div>
     </div>
     <div class="edit-container" #editorContainer></div>
 </div>

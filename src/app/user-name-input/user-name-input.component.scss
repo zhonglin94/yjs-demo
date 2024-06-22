@@ -1,4 +1,6 @@
 .user-input-container {
     display: flex;
     flex-flow: column nowrap;
+    max-width: 500px;
+    margin: auto;
 }
