@@ -10,17 +10,15 @@
                 </div>
             </ng-container>
             <ng-container *ngIf="yjsService.users.length>5">
-                <div class="avatar-more">
-                    <div class="user-avatar-container" [style.background]="'#c2185b'">
-                        <div class="user-avatar">
-                            <span>{{yjsService.users.length}}</span>
-                        </div>
+                <div class="user-avatar-container" [style.background]="'#c2185b'">
+                    <div class="user-avatar">
+                        <span>{{yjsService.users.length}}</span>
                     </div>
-                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                        <mat-icon>keyboard_arrow_down</mat-icon>
-                    </button>
                 </div>
             </ng-container>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
             <mat-menu #menu="matMenu">
                 <div class="vertical-avatar-container">
                     <ng-container *ngFor="let user of yjsService.users">
@@ -30,7 +28,7 @@
                                     <span>{{getNameAbbreviation(user.name) | uppercase}}</span>
                                 </div>
                             </div>
-                            <span class="user-name">{{user.name}}</span></div>
+                            <span class="user-name">{{user.name | titlecase}}</span></div>
                     </ng-container>
                 </div>
             </mat-menu>

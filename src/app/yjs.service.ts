@@ -62,6 +62,7 @@ export class YjsService {
 			awareness.getStates().forEach(state => {
 				this.users.push(state['user']);
 			});
+			this.users.sort((a, b) => a.name.localeCompare(b.name));
 			this.topFiveUsers = this.users.slice(0, 5);
 		});
 	}
