@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "start:server": "node ./bin/server.js",
-    "build": "ng build",
-    "build:pubic-server": "ng build --configuration pubic-server",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start:public": "ng serve",
+    "start:bgc": "ng serve --configuration production",
+    "build:bgc": "ng build",
+    "build:public": "ng build --configuration pubic-server",
+    "start:bgc-server": "node ./bin/server.js"
   },
   "private": true,
   "dependencies": {
