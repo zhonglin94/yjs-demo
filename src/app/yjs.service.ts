@@ -34,7 +34,7 @@ export class YjsService {
 	init(): void {
 		const ydoc = new Y.Doc();
 		this.provider = new WebsocketProvider(
-			'wss://demos.yjs.dev/ws',
+			'ws://localhost:1234',
 			'bgc-innovation-carnival',
 			ydoc
 		);
