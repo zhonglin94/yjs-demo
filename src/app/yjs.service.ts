@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { WebsocketProvider } from 'y-websocket';
 import * as Y from 'yjs';
+import { environment } from '../environments/environment';
 
 export const usercolors = [
 	'#1f78b4',  //蓝色
@@ -33,8 +34,9 @@ export class YjsService {
 
 	init(): void {
 		const ydoc = new Y.Doc();
+		const serverUrl = environment.serverUrl;
 		this.provider = new WebsocketProvider(
-			'ws://localhost:1234',
+			serverUrl,
 			'bgc-innovation-carnival',
 			ydoc
 		);

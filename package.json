@@ -6,6 +6,7 @@
     "start": "ng serve",
     "start:server": "node ./node_modules/y-websocket/bin/server.js",
     "build": "ng build",
+    "build:pubic-server": "ng build --configuration pubic-server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

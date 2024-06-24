@@ -1,4 +1,4 @@
 export const environment = {
 	production: true,
-	serverUrl: 'ws://localhost:1234'
+	serverUrl: 'wss://demos.yjs.dev/ws'
 };
